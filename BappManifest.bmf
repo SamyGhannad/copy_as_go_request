@@ -1,0 +1,13 @@
+Uuid: 6d8cc9bde0b948959aa557d9bd0f0e66
+ExtensionType: 1
+Name: Copy As Go Request
+RepoName: copy-as-go-request
+ScreenVersion: 1.0.0
+SerialVersion: 0
+MinPlatformVersion: 0
+ProOnly: False
+Author: SamOnSec
+ShortDescription: Burp Suite extension to copy requests as Go
+EntryPoint: build/libs/copy-as-go-request-all.jar
+BuildCommand: ./gradlew build 
+SupportedProducts: Pro, Community
