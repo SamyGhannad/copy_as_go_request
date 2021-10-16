@@ -45,6 +45,12 @@ public class BurpExtender implements IBurpExtender, ClipboardOwner, IContextMenu
     StringBuilder goRequest = new StringBuilder();
     //Analyze the request and get information
     IRequestInfo requestInfo = helpers.analyzeRequest(requestResponsePair);
+    // The user might select "Copy as Go request with base64 encoded body", but if the body
+    // is actually empty, there's nothing to base64 encode, therefore we shouldn't be importing
+    // encoding/base64`
+    if (requestInfo.getBodyOffset() >= requestResponsePair.getRequest().length - 2) {
+      base64Encode = false;
+    }
     goRequest.append(Resources.GetRequestPrefix(base64Encode));
     goRequest.append(processHeaders(requestInfo.getHeaders()));
     goRequest.append(processBody(requestResponsePair.getRequest(), requestInfo, base64Encode));
