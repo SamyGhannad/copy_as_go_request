@@ -4,7 +4,7 @@ public class Resources {
   public static String GetRequestPrefix(boolean base64Encode){
     // Should we import encoding/base64 or not?
     if (base64Encode) {
-      return String.format("%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n",
+      return String.format("%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n",
           "package main",
           "",
           "import (",
@@ -12,6 +12,7 @@ public class Resources {
           "	\"encoding/base64\"",
           "	\"crypto/tls\"",
           "	\"fmt\"",
+          "	\"log\"",
           "	\"io/ioutil\"",
           "	\"net/http\"",
           ")",
