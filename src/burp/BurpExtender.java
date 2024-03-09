@@ -110,7 +110,7 @@ public class BurpExtender implements IBurpExtender, ClipboardOwner, IContextMenu
   }
 
   private String escape(String input) {
-    return input.replace("\"", "\\\"");
+    return input.replace("\\", "\\\\").replace("\"", "\\\"");
   }
 
 }
